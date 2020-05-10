@@ -28,7 +28,7 @@ namespace DatingApp.API.Data
 
         private bool VerifyPasswordHash(string password, byte[] passwordHash, byte[] passwordSAlt)
         {
-            using(var hmac = new System.Security.Cryptography.HMACSHA512())
+            using(var hmac = new System.Security.Cryptography.HMACSHA512(passwordSAlt))
             {
                 var computerHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
                 for(int i = 0; i < computerHash.Length; i++)
