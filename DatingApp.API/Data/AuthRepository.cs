@@ -52,9 +52,12 @@ namespace DatingApp.API.Data
             return user;
         }
 
-        public Task<bool> UserExists(string username)
+        public async Task<bool> UserExists(string username)
         {
-            throw new System.NotImplementedException();
+            if(await _context.Users.AnyAsync(x => x.UserName == username))
+                return true;
+
+            return false;    
         }
 
         private void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
