@@ -16,7 +16,8 @@ namespace DatingApp.API
     {
         public static void Main(string[] args)
         {
-            var host = CreateHostBuilder(args).Build();
+            CreateHostBuilder(args).Build().Run();
+            /*var host = CreateHostBuilder(args).Build();
             using (var scopre = host.Services.CreateScope())
             {
                 var service = scopre.ServiceProvider;
@@ -32,7 +33,7 @@ namespace DatingApp.API
                     var logger = service.GetRequiredService<ILogger<Program>>();
                     logger.LogError(ex, "An error ocurred during migration");
                 }
-            }
+            }*/
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
