@@ -11,11 +11,12 @@ import { HomeComponent } from './home/home.component';
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
-import { MemberListComponent } from './member-list/member-list.component';
+import { MemberListComponent } from './members/member-list/member-list.component';
 import { ListsComponent } from './lists/lists.component';
 import { MessagesComponent } from './messages/messages.component';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
+import { MemberCardComponent } from './members/member-card/member-card.component';
 
 @NgModule({
    declarations: [
@@ -25,7 +26,8 @@ import { appRoutes } from './routes';
       HomeComponent,
       MemberListComponent,
       ListsComponent,
-      MessagesComponent
+      MessagesComponent,
+      MemberCardComponent
    ],
    imports: [
       BrowserModule,
